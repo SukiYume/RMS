@@ -25,6 +25,8 @@ _✨ Code repository for Paper ✨_
 
   Figure 2, 3, and 4 of this paper are plotted in `RM-Figure.ipynb`. `Polarization-RM.ipynb` contains Figure 1 and the measurements of FRBs' Rotation Measure. Data and Figures are stored in `CalData` and `Figure`, respectively.
 
+  `ModulePy` contains two methods for measuring RM, **RM Synthesis** in `rm_synthesis.py`, and **RM QU Fitting** in `rm_qu_fitting.py`. The code usage method shows in `code_usage.py`.
+
   ```bash
   `-- RMS
       |-- CalData
@@ -38,11 +40,30 @@ _✨ Code repository for Paper ✨_
       |   `-- RM-437.txt
       |-- Figure
       |   `-- RM_Scatter_New.png
+      |-- ModulePy
+      |   |-- code_usage.py
+      |   |-- extract_pulse.py
+      |   |-- requirements.txt
+      |   |-- rm_qu_fitting.py
+      |   `-- rm_synthesis.py
       |-- RM-Figure.ipynb
       |-- Polarization-RM.ipynb
       |-- LICENSE
       `-- README.md
   ```
+
+  Usage of `rm_qu_fitting.py` - For example:
+
+  ```python
+  from rm_qu_fitting import mcmc_fit, plot_mcmc_samp
+
+  # Q and U - 1D numpy array of a pulse, as a function of frequency.
+  result, RM, RM_error_left, RM_error_right = mcmc_fit(Q, U, freq, rm_left=-10000, rm_right=10000)
+  print('RM: {:.0f} +{:.0f} -{:.0f}'.format(RM, RM_error_right, RM_error_left))
+  plot_mcmc_samp(result, save=False)
+  ```
+
+
 
 ## TO-DO
 
