@@ -23,7 +23,7 @@ _✨ Code repository for Papers ✨_
   
   In this paper, we report polarization measurements of five repeating FRBs. Combining these with archival observations, we identify trends of lower polarisation at lower frequencies. We model this behaviour as multi-path **Rotation Measure Scatter (RMS)**. 
 
-  <img src="Figure/RM_Scatter_New.png" alt="RMS" width="900px" />
+  <div align="center"><img src="Figure/RM_Scatter_New.png" alt="RMS" width="500px" /></div>
 
   Sources with higher **RMS** have higher *RM magnitude* and *scattering timescales*, indicating a complex environment near the sources, such as a supernova remnant or a pulsar wind nebula, consistent with FRBs arising from young stellar populations.
 
@@ -33,7 +33,7 @@ _✨ Code repository for Papers ✨_
 
   In this paper, we report direct evidence for a B-field reversal based on the observed sign change and extreme variation of FRB~20190520B's RM.
 
-  <img src="Figure/RM-Time-New.png" alt="RMS" width="900px" />
+  <div align="center"><img src="Figure/RM-Time-New.png" alt="RMS" width="500px" /></div>
 
   The implied short-term change of the B-field configuration in or around the FRB could be due to the vicinity of massive black holes, or a magnetized companion star in binary systems, or a young supernova remnant along the line of sight.
 
