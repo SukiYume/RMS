@@ -2,8 +2,9 @@
 
 # Rotation Measure Scatter (RMS)
 
-_✨ Code repository for Paper ✨_  
-**Frequency Dependent Polarization of Repeating Fast Radio Bursts - Implications for Their Origin**
+_✨ Code repository for Papers ✨_  
+**Frequency Dependent Polarization of Repeating Fast Radio Bursts - Implications for Their Origin** </br>
+**Magnetic Field Reversal around an Active Fast Radio Burst**
 
 </div>
 
@@ -11,9 +12,14 @@ _✨ Code repository for Paper ✨_
   <a href="https://github.com/SukiYume/RMS">
     <img src="https://img.shields.io/badge/RotationMeasureScatter-RMS-red" alt="release">
   </a>
+  <a href="https://github.com/SukiYume/RMS">
+    <img src="https://img.shields.io/badge/RotationMeasureReverse-RMR-blue" alt="release">
+  </a>
 </p>
 
 ## Description
+
+### RM Scatter
   
   In this paper, we report polarization measurements of five repeating FRBs. Combining these with archival observations, we identify trends of lower polarisation at lower frequencies. We model this behaviour as multi-path **Rotation Measure Scatter (RMS)**. 
 
@@ -21,9 +27,19 @@ _✨ Code repository for Paper ✨_
 
   Sources with higher **RMS** have higher *RM magnitude* and *scattering timescales*, indicating a complex environment near the sources, such as a supernova remnant or a pulsar wind nebula, consistent with FRBs arising from young stellar populations.
 
-## Structure
+  Figure 2, 3, and 4 of this paper are plotted in `RMS-Figure.ipynb`. `Polarization-RM.ipynb` contains Figure 1 and the measurements of FRBs' Rotation Measure. Data and Figures are stored in `CalData` and `Figure`, respectively.
 
-  Figure 2, 3, and 4 of this paper are plotted in `RM-Figure.ipynb`. `Polarization-RM.ipynb` contains Figure 1 and the measurements of FRBs' Rotation Measure. Data and Figures are stored in `CalData` and `Figure`, respectively.
+### RM Reverse
+
+  In this paper, we report direct evidence for a B-field reversal based on the observed sign change and extreme variation of FRB~20190520B's RM.
+
+  <img src="Figure/RM-Time-New.png" alt="RMS" width="900px" />
+
+  The implied short-term change of the B-field configuration in or around the FRB could be due to the vicinity of massive black holes, or a magnetized companion star in binary systems, or a young supernova remnant along the line of sight.
+
+  All figures of this paper are plotted in `RMR-Figure.ipynb`.
+
+## Structure
 
   `ModulePy` contains two methods for measuring RM, **RM Synthesis** in `rm_synthesis.py`, and **RM QU Fitting** in `rm_qu_fitting.py`. The code usage method shows in `code_usage.py`.
 
@@ -42,11 +58,13 @@ _✨ Code repository for Paper ✨_
       |   `-- RM_Scatter_New.png
       |-- ModulePy
       |   |-- code_usage.py
+      |   |-- translate_data.py
       |   |-- extract_pulse.py
       |   |-- requirements.txt
       |   |-- rm_qu_fitting.py
       |   `-- rm_synthesis.py
-      |-- RM-Figure.ipynb
+      |-- RMR-Figure.ipynb
+      |-- RMS-Figure.ipynb
       |-- Polarization-RM.ipynb
       |-- LICENSE
       `-- README.md
@@ -63,8 +81,6 @@ _✨ Code repository for Paper ✨_
   plot_mcmc_samp(result, save=False)
   ```
 
-
-
 ## TO-DO
 
-  Modularize the measurement methods of RM.
+  Optimized pulse extraction algorithm.
