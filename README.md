@@ -46,6 +46,7 @@ _✨ Code repository for Papers ✨_
   ```bash
   `-- RMS
       |-- CalData
+      |   |-- 210608_135610_21.rf.TSb4.txt
       |   |-- 190417-FAST.csv
       |   |-- 201124-FAST.csv
       |   |-- 201124-GBT.csv
@@ -54,7 +55,11 @@ _✨ Code repository for Papers ✨_
       |   |-- RM-190520-437.txt
       |   |-- RM-201124-26.txt
       |   `-- RM-437.txt
+      |-- Data
+      |   |-- 210608_135610_21.rf.TSb4
+      |   `-- Parkes-DM.csv
       |-- Figure
+      |   |-- RM-Time-New.png
       |   `-- RM_Scatter_New.png
       |-- ModulePy
       |   |-- code_usage.py
@@ -79,6 +84,18 @@ _✨ Code repository for Papers ✨_
   result, RM, RM_error_left, RM_error_right = mcmc_fit(Q, U, freq, rm_left=-10000, rm_right=10000)
   print('RM: {:.0f} +{:.0f} -{:.0f}'.format(RM, RM_error_right, RM_error_left))
   plot_mcmc_samp(result, save=False)
+  ```
+
+  Usage of `rm_synthesis.py` - For example:
+
+  ```python
+  from rm_synthesis import synthesis_rm, get_rm, plot_rm_synthesis
+
+  # I, Q and U - 2D numpy array of a pulse, as a function of frequency and time.
+  rm_list, Linear                   = synthesis_rm(I, Q, U, freq, rm_left=-20000, rm_right=20000)
+  RM, RM_error_left, RM_error_right = get_rm(rm_list, Linear, snr)
+  print('RM: {:.0f} +{:.0f} -{:.0f}'.format(RM, RM_error_right, RM_error_left))
+  plot_rm_synthesis(rm_list, Linear, save=False)
   ```
 
 ## TO-DO
