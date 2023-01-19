@@ -15,6 +15,9 @@ _✨ Code repository for Papers ✨_
   <a href="https://github.com/SukiYume/RMS">
     <img src="https://img.shields.io/badge/RotationMeasureReverse-RMR-blue" alt="release">
   </a>
+  <a href="https://zenodo.org/badge/latestdoi/452297775">
+    <img src="https://zenodo.org/badge/452297775.svg" alt="DOI">
+  </a>
 </p>
 
 ## Description

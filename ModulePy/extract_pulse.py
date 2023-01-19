@@ -52,8 +52,11 @@ def get_time_index_new(I, noise_sigma=2, squeeze_frac=3):
     ##### 选择最大值索引所在索引
     max_index      = np.where(I_index == np.argmax(I_m))[0][0]
     ##### 选择最大值索引左右一个索引作为起终点，并收缩1/5
-    if max_index >= 1:
+    if max_index >= 1 and max_index < len(I_index) - 1:
         start, end = I_index[[max_index-1, max_index+1]]
+        start, end = start + int((end - start) * 1 / squeeze_frac / 2), end - int((end - start) * 1 / squeeze_frac / 2)
+    elif max_index >= 1 and max_index == len(I_index) - 1:
+        start, end = I_index[max_index-1], len(I_m)
         start, end = start + int((end - start) * 1 / squeeze_frac / 2), end - int((end - start) * 1 / squeeze_frac / 2)
     else:
         start, end = 0, I_index[max_index+1]
